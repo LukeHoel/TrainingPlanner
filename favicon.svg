@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad)" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Dumbbell design -->
+  <!-- Left weight -->
+  <rect x="15" y="35" width="12" height="30" rx="3" fill="#fff"/>
+  <!-- Right weight -->
+  <rect x="73" y="35" width="12" height="30" rx="3" fill="#fff"/>
+  <!-- Handle -->
+  <rect x="27" y="47" width="46" height="6" rx="3" fill="#fff"/>
+  <!-- Center grip lines -->
+  <line x1="45" y1="45" x2="45" y2="55" stroke="#667eea" stroke-width="1"/>
+  <line x1="50" y1="45" x2="50" y2="55" stroke="#667eea" stroke-width="1"/>
+  <line x1="55" y1="45" x2="55" y2="55" stroke="#667eea" stroke-width="1"/>
+</svg>
