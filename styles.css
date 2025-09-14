@@ -25,28 +25,28 @@ body {
 /* Header Styles */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(10px);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 600;
     color: #4a5568;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 header h1 i {
     color: #667eea;
-    margin-right: 15px;
+    margin-right: 8px;
 }
 
 header p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #718096;
     font-weight: 400;
 }
@@ -90,6 +90,24 @@ section h2 i {
 .config-item label {
     font-weight: 500;
     color: #4a5568;
+}
+
+/* Welcome state styling */
+.split-config h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+.split-config .config-item {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.split-config .config-item label {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
 input[type="text"] {
@@ -187,13 +205,31 @@ input[type="text"]:focus {
 }
 
 .workout-display {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #667eea;
-    padding: 10px;
+    padding: 15px;
     background: white;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 2px dashed #667eea;
+    margin-bottom: 12px;
+}
+
+.next-workout-info {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.next-workout-info.overdue {
+    color: #f56565;
+    font-weight: 600;
+}
+
+.next-workout .btn {
+    width: 100%;
+    justify-content: center;
 }
 
 .streak-display {
@@ -351,21 +387,21 @@ input[type="text"]:focus {
     }
     
     header {
-        padding: 20px 15px;
-        margin-bottom: 20px;
+        padding: 12px 15px;
+        margin-bottom: 15px;
     }
     
     header h1 {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
+        font-size: 1.2rem;
+        margin-bottom: 4px;
     }
     
     header h1 i {
-        margin-right: 8px;
+        margin-right: 6px;
     }
     
     header p {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
     
     section {
@@ -488,11 +524,11 @@ input[type="text"]:focus {
     }
     
     header {
-        padding: 15px 10px;
+        padding: 10px;
     }
     
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.1rem;
     }
     
     section {

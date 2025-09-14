@@ -28,6 +28,13 @@ class TrainingPlanner {
         document.getElementById('clearHistory').addEventListener('click', () => {
             this.clearHistory();
         });
+
+        document.getElementById('completeNextWorkout').addEventListener('click', () => {
+            const nextWorkout = this.getNextWorkout();
+            if (nextWorkout && nextWorkout !== 'Configure your split first') {
+                this.completeWorkout(nextWorkout);
+            }
+        });
     }
 
     setSplit() {
@@ -194,6 +201,7 @@ class TrainingPlanner {
     }
 
     renderUI() {
+        this.toggleSectionsVisibility();
         this.renderNextWorkout();
         this.renderStreak();
         this.renderWorkoutGrid();
@@ -201,10 +209,73 @@ class TrainingPlanner {
         this.renderStats();
     }
 
+    toggleSectionsVisibility() {
+        const hasWorkoutTypes = this.workoutTypes.length > 0;
+        
+        // Get all sections except the split config
+        const statusSection = document.querySelector('.status-section');
+        const workoutSection = document.querySelector('.workout-section');
+        const historySection = document.querySelector('.history-section');
+        const statsSection = document.querySelector('.stats-section');
+        
+        // Show/hide sections based on whether split is configured
+        const display = hasWorkoutTypes ? 'block' : 'none';
+        
+        if (statusSection) statusSection.style.display = display;
+        if (workoutSection) workoutSection.style.display = display;
+        if (historySection) historySection.style.display = display;
+        if (statsSection) statsSection.style.display = display;
+        
+        // Update the split config section styling for initial setup
+        const splitSection = document.querySelector('.split-config');
+        if (splitSection) {
+            if (!hasWorkoutTypes) {
+                // Make it more prominent when it's the only thing showing
+                splitSection.style.marginTop = '40px';
+                splitSection.querySelector('h2').textContent = '🏋️ Welcome! Set Up Your Workout Split';
+            } else {
+                // Normal styling when other sections are visible
+                splitSection.style.marginTop = '';
+                splitSection.querySelector('h2').innerHTML = '<i class="fas fa-cog"></i> Configure Your Split';
+            }
+        }
+    }
+
     renderNextWorkout() {
         const nextWorkoutElement = document.getElementById('nextWorkout');
+        const nextWorkoutInfoElement = document.getElementById('nextWorkoutInfo');
+        const completeNextWorkoutButton = document.getElementById('completeNextWorkout');
         const nextWorkout = this.getNextWorkout();
+        
         nextWorkoutElement.textContent = nextWorkout;
+        
+        if (nextWorkout === 'Configure your split first' || this.workoutTypes.length === 0) {
+            nextWorkoutInfoElement.style.display = 'none';
+            completeNextWorkoutButton.style.display = 'none';
+        } else {
+            const daysSince = this.getDaysSinceLastWorkout(nextWorkout);
+            
+            let daysSinceText = 'Never completed';
+            let infoClass = '';
+            
+            if (daysSince !== null) {
+                if (daysSince === 0) {
+                    daysSinceText = 'Completed today';
+                } else if (daysSince === 1) {
+                    daysSinceText = 'Completed yesterday';
+                } else {
+                    daysSinceText = `${daysSince} days ago`;
+                    if (daysSince > 7) {
+                        infoClass = 'overdue';
+                    }
+                }
+            }
+            
+            nextWorkoutInfoElement.textContent = daysSinceText;
+            nextWorkoutInfoElement.className = `next-workout-info ${infoClass}`;
+            nextWorkoutInfoElement.style.display = 'block';
+            completeNextWorkoutButton.style.display = 'block';
+        }
     }
 
     renderStreak() {
