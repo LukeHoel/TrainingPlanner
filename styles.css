@@ -7,9 +7,9 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     min-height: 100vh;
-    color: #333;
+    color: #e2e8f0;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -26,17 +26,18 @@ body {
 header {
     text-align: center;
     margin-bottom: 25px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(30, 41, 59, 0.9);
     padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header h1 {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #4a5568;
+    color: #f8fafc;
     margin-bottom: 5px;
 }
 
@@ -47,24 +48,25 @@ header h1 i {
 
 header p {
     font-size: 0.9rem;
-    color: #718096;
+    color: #94a3b8;
     font-weight: 400;
 }
 
 /* Section Styles */
 section {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(30, 41, 59, 0.9);
     margin-bottom: 30px;
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 section h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #4a5568;
+    color: #f8fafc;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -89,7 +91,7 @@ section h2 i {
 
 .config-item label {
     font-weight: 500;
-    color: #4a5568;
+    color: #f8fafc;
 }
 
 /* Welcome state styling */
@@ -112,11 +114,12 @@ section h2 i {
 
 input[type="text"] {
     padding: 14px 16px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid #475569;
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.2s ease;
-    background: #f7fafc;
+    background: #334155;
+    color: #f8fafc;
     min-height: 48px; /* Minimum touch target size */
     -webkit-appearance: none; /* Remove iOS styling */
     appearance: none;
@@ -125,8 +128,12 @@ input[type="text"] {
 input[type="text"]:focus {
     outline: none;
     border-color: #667eea;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background: #475569;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+input[type="text"]::placeholder {
+    color: #94a3b8;
 }
 
 /* Button Styles - Mobile Optimized */
@@ -186,21 +193,22 @@ input[type="text"]:focus {
 }
 
 .status-card {
-    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    background: rgba(51, 65, 85, 0.8);
     padding: 25px;
     border-radius: 12px;
     text-align: center;
-    border: 2px solid #e2e8f0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.2s ease;
 }
 
 .status-card:hover {
     transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .status-card h3 {
     font-size: 1.1rem;
-    color: #4a5568;
+    color: #f8fafc;
     margin-bottom: 15px;
 }
 
@@ -209,7 +217,7 @@ input[type="text"]:focus {
     font-weight: 600;
     color: #667eea;
     padding: 15px;
-    background: white;
+    background: rgba(51, 65, 85, 0.8);
     border-radius: 10px;
     border: 2px dashed #667eea;
     margin-bottom: 12px;
@@ -217,13 +225,13 @@ input[type="text"]:focus {
 
 .next-workout-info {
     font-size: 0.9rem;
-    color: #718096;
+    color: #94a3b8;
     margin-bottom: 15px;
     font-weight: 500;
 }
 
 .next-workout-info.overdue {
-    color: #f56565;
+    color: #f87171;
     font-weight: 600;
 }
 
@@ -235,7 +243,7 @@ input[type="text"]:focus {
 .streak-display {
     font-size: 2rem;
     font-weight: 700;
-    color: #f56565;
+    color: #f87171;
 }
 
 .next-workout {
@@ -243,7 +251,7 @@ input[type="text"]:focus {
 }
 
 .streak {
-    border-color: #f56565;
+    border-color: #f87171;
 }
 
 /* Workout Grid */
@@ -254,10 +262,10 @@ input[type="text"]:focus {
 }
 
 .workout-card {
-    background: white;
+    background: rgba(51, 65, 85, 0.8);
     padding: 24px;
     border-radius: 16px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
     transition: all 0.2s ease;
     text-align: center;
     position: relative;
@@ -266,7 +274,8 @@ input[type="text"]:focus {
 
 .workout-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .workout-card:active {
@@ -275,7 +284,7 @@ input[type="text"]:focus {
 
 .workout-card h3 {
     font-size: 1.3rem;
-    color: #4a5568;
+    color: #f8fafc;
     margin-bottom: 15px;
     font-weight: 600;
     display: flex;
@@ -286,19 +295,19 @@ input[type="text"]:focus {
 
 .days-since {
     font-size: 0.95rem;
-    color: #718096;
+    color: #94a3b8;
     margin-bottom: 18px;
     font-weight: 500;
     padding: 8px 12px;
-    background: #f7fafc;
+    background: rgba(30, 41, 59, 0.8);
     border-radius: 8px;
     display: inline-block;
 }
 
 .days-since.overdue {
-    color: #f56565;
+    color: #f87171;
     font-weight: 600;
-    background: #fed7d7;
+    background: rgba(248, 113, 113, 0.2);
 }
 
 .workout-card .btn {
@@ -319,7 +328,7 @@ input[type="text"]:focus {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background: #f7fafc;
+    background: rgba(51, 65, 85, 0.6);
     margin-bottom: 10px;
     border-radius: 8px;
     border-left: 4px solid #667eea;
@@ -331,11 +340,11 @@ input[type="text"]:focus {
 
 .history-workout {
     font-weight: 600;
-    color: #4a5568;
+    color: #f8fafc;
 }
 
 .history-date {
-    color: #718096;
+    color: #94a3b8;
     font-size: 0.9rem;
 }
 
@@ -347,11 +356,11 @@ input[type="text"]:focus {
 }
 
 .stat-card {
-    background: white;
+    background: rgba(51, 65, 85, 0.8);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    border: 2px solid #e2e8f0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat-number {
@@ -362,7 +371,7 @@ input[type="text"]:focus {
 }
 
 .stat-label {
-    color: #718096;
+    color: #94a3b8;
     font-size: 0.9rem;
     margin-top: 5px;
 }
@@ -371,13 +380,13 @@ input[type="text"]:focus {
 .empty-state {
     text-align: center;
     padding: 40px;
-    color: #718096;
+    color: #94a3b8;
 }
 
 .empty-state i {
     font-size: 3rem;
     margin-bottom: 15px;
-    color: #cbd5e0;
+    color: #475569;
 }
 
 /* Mobile-First Responsive Design */
@@ -584,17 +593,17 @@ input[type="text"]:focus {
 }
 
 .history-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #334155;
     border-radius: 3px;
 }
 
 .history-list::-webkit-scrollbar-thumb {
-    background: #cbd5e0;
+    background: #475569;
     border-radius: 3px;
 }
 
 .history-list::-webkit-scrollbar-thumb:hover {
-    background: #a0aec0;
+    background: #64748b;
 }
 
 /* Loading States */
